@@ -1,0 +1,51 @@
+<ion-view view-title="Find a Coffeeshop">
+<ion-nav-buttons side="right">
+      <button class="button icon ion-gear-a" ng-click="goAccount()">
+      </button>
+ </ion-nav-buttons>
+<ion-content class="padding scroll-bg" scroll="false">
+<div class="container" ng-init="initMap()">
+  <div class="row">
+    <div class="col-md-12" style="width: 100%;">
+
+
+      <i class="icon ion-search placeholder-icon searchIcon"></i>
+      <input ng-focus="disableTap()" placeholder="Enter a city" id="autocomplete" type="text" style="width: 100%;" class="form-control searchBar" g-places-autocomplete ng-model="Store.location" ng-change="onPlaceChanged()"/>
+
+      <div id="map" data-tap-disabled="true" class="locationMap"></div>
+
+
+      <div id="listing" style="width: 35% !important; display: none;">
+        <table id="resultsTable">
+          <tbody id="results"></tbody>
+        </table>
+      </div>
+
+      <div style="display: none">
+        <div id="info-content">
+          <table>
+            <tr id="iw-name-row" class="iw_table_row">
+              <td id="iw-name"></td>
+            </tr>
+            <tr id="iw-address-row" class="iw_table_row">
+              <td class="iw_attribute_name">Address:</td>
+              <td id="iw-address"></td>
+            </tr>
+            <tr id="iw-phone-row" class="iw_table_row">
+              <td class="iw_attribute_name">Telephone:</td>
+              <td id="iw-phone"></td>
+            </tr>
+            <tr id="iw-website-row" class="iw_table_row">
+              <td class="iw_attribute_name">Website:</td>
+              <td id="iw-website"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</ion-content>
+</ion-view>

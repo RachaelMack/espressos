@@ -1,0 +1,35 @@
+<ion-modal-view>
+  <ion-header-bar class="balanced">
+    <h1 class="title">Active Run</h1>
+    <div class="buttons">
+      <button class="button ion-close-round" ng-click="closeRun()">
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding scroll-bg">
+
+    <div class="list card">
+  <div class="item item-avatar">
+    <img src="img/cup_icon.png">
+    <h2 class="favTitle">Current Run</h2>
+  </div>
+
+  <div class="item item-list" ng-repeat="pref in cachedRun.prefs">
+    <form id="newRun">
+    <ul>
+      <li>{{pref.display_name}}: {{pref.preferences.defaultDrink.size}} {{pref.preferences.defaultDrink.beverage}} ({{pref.preferences.defaultDrink.blend}})
+      <p>{{pref.preferences.defaultDrink.additives.whitener.numberOf}} {{pref.preferences.defaultDrink.additives.whitener.type}},
+        {{pref.preferences.defaultDrink.additives.sweetener.numberOf}} {{pref.preferences.defaultDrink.additives.sweetener.type}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+  </ion-content>
+  <ion-footer-bar class="footer-bar-custom">
+    <a class="footer-bar-item item-right button button button-positive" ng-click="saveTitle()">SAVE</a>
+    <a class="footer-bar-item item-left button button button-stable" ng-click="deleteActiveRun()">DISCARD</a>
+  </ion-footer-bar>
+  </form>
+
+</ion-modal-view>

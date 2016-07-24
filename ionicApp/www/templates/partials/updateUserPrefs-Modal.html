@@ -1,0 +1,210 @@
+<ion-modal-view>
+  <ion-header-bar class="balanced">
+    <h1 class="title">Preferences</h1>
+    <div class="buttons">
+      <button class="button ion-close-round" ng-click="closeModal()">
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding scroll-bg" ng-controller="AccountCtrl">
+    <form ng-submit="updateUserPrefs()">
+      <!--<input class="item item-input sipsterInput" placeholder="Change your Beverage" style="width: 90%; margin-left: auto; margin-right: auto;" ng-model="updateInfo.beverage" />-->
+      <!--<input class="item item-input sipsterInput" placeholder="Change your Blend" style="width: 90%; margin-left: auto; margin-right: auto;" ng-model="updateInfo.blend" />-->
+      <!--<input class="item item-input sipsterInput" placeholder="Change your Size" style="width: 90%; margin-left: auto; margin-right: auto;" ng-model="updateInfo.size" />-->
+      <!--<input class="item item-input sipsterInput" placeholder="Type of Sweetener" style="width: 90%; margin-left: auto; margin-right: auto;" ng-model="updateInfo.sweetener.type" />-->
+      <!--<input class="item item-input sipsterInput" placeholder="# of Sweetner" style="width: 90%; margin-left: auto; margin-right: auto;" ng-model="updateInfo.sweetener.numOf" />-->
+      <!--<input class="item item-input sipsterInput" placeholder="Type of Whitener" style="width: 90%; margin-left: auto; margin-right: auto;" ng-model="updateInfo.whitener.type" />-->
+      <!--<input class="item item-input sipsterInput" placeholder="# of Whitener" style="width: 90%; margin-left: auto; margin-right: auto;" ng-model="updateInfo.whitener.numOf" />-->
+
+      <ion-scroll ng-hide="prefSelect" zooming="true" direction="xy" style="width: 500px; height: 160px">
+        <div ng-hide="prefSelect" class="row" style="width: 450px; height: 150px;">
+
+          <div ng-click="coffeeSelect()" ng-hide="prefSelect" class="col-20 coffee" ng-class="{'coffeeSelect':clickedCoffee,'coffee':!clickedCoffee}" ng-model="updateInfo.beverage">
+          </div>
+
+          <div ng-click="teaSelect()" class="col-20 tea" ng-class="{'teaSelect':clickedTea,'tea':!clickedTea}">
+          </div>
+
+          <div ng-click="hcSelect()" class="col-20 hc" ng-class="{'hcSelect':clickedHc,'hc':!clickedHc}">
+          </div>
+
+          <div ng-click="coldSelect()" class="col-20 cold" ng-class="{'coldSelect':clickedCold,'cold':!clickedCold}">
+          </div>
+
+        </div>
+      </ion-scroll>
+
+
+      <!-- Coffee Fields -->
+      <div ng-show="clickedCoffee">
+
+        <ion-item class="item-input item-select sipsterInput">
+          <span class="input-label">Size</span>
+          <select ng-model="updateInfo.size">
+            <option selected>Extra Large</option>
+            <option>Large</option>
+            <option>Medium</option>
+            <option>Small</option>
+          </select>
+        </ion-item>
+
+        <ion-item class="item-input item-select sipsterInput">
+          <span class="input-label">Roast</span>
+          <select ng-model="updateInfo.blend">
+            <option selected>Dark</option>
+            <option>Medium</option>
+            <option>Light</option>
+          </select>
+        </ion-item>
+
+        <div class="row noPadding">
+          <div class="col-80 noPadding">
+            <ion-item class="item-input item-select sipsterInput">
+              <span class="input-label">Whitener</span>
+              <select ng-model="updateInfo.whitener.type">
+                <option selected>None</option>
+                <option>Cream</option>
+                <option>Milk</option>
+                <option>Half and Half</option>
+                <option>Dairy Substitute</option>
+              </select>
+
+          </div>
+          </ion-item>
+
+          <div class="col-20 noPadding">
+            <label class="item item-input sipsterInputSmall">
+              <input type="number" placeholder="0" min="0" max="5" ng-model="updateInfo.whitener.numOf">
+            </label>
+          </div>
+        </div>
+        <div class="row noPadding">
+          <div class="col-80 noPadding">
+            <ion-item class="item-input item-select sipsterInput">
+              <span class="input-label" >Sweetener</span>
+              <select ng-model="updateInfo.sweetener.type">
+                <option selected>None</option>
+                <option>Sugar</option>
+                <option>Splenda</option>
+                <option>Stevia</option>
+              </select>
+          </div>
+          </ion-item>
+          <div class="col-20 noPadding">
+            <label class="item item-input sipsterInputSmall">
+              <input type="number" placeholder="0" min="0" max="5" ng-model="updateInfo.sweetener.numOf">
+            </label>
+          </div>
+        </div>
+      </div>
+      </div>
+       <button ng-show="clickedCoffee" class="button button-block button-positive" type="submit">Update Preferences</button>
+      </div>
+
+      <!-- Tea Fields -->
+      <div ng-show="clickedTea">
+
+        <ion-item class="item-input item-select sipsterInput">
+          <span class="input-label">Size</span>
+          <select ng-model="updateInfo.size">
+            <option selected>Extra Large</option>
+            <option>Large</option>
+            <option>Medium</option>
+            <option>Small</option>
+          </select>
+        </ion-item>
+
+        <ion-item class="item-input item-select sipsterInput">
+          <span class="input-label">Blend</span>
+          <select ng-model="updateInfo.blend">
+            <option selected>Green</option>
+            <option>Chai</option>
+            <option>English Breakfast</option>
+            <option>Orange Pekoe</option>
+            <option>Earl Grey</option>
+          </select>
+        </ion-item>
+
+        <div class="row noPadding">
+          <div class="col-80 noPadding">
+            <ion-item class="item-input item-select sipsterInput">
+              <span class="input-label">Whitener</span>
+              <select ng-model="updateInfo.whitener.type">
+                <option selected>None</option>
+                <option>Cream</option>
+                <option>Milk</option>
+                <option>Half and Half</option>
+                <option>Dairy Substitute</option>
+              </select>
+
+          </div>
+          </ion-item>
+
+          <div class="col-20 noPadding">
+            <label class="item item-input sipsterInputSmall">
+              <input type="number" placeholder="0"  ng-model="updateInfo.whitener.numOf">
+            </label>
+          </div>
+        </div>
+        <div class="row noPadding">
+          <div class="col-80 noPadding">
+            <ion-item class="item-input item-select sipsterInput">
+              <span class="input-label" >Sweetener</span>
+              <select ng-model="updateInfo.sweetener.type">
+                <option selected>None</option>
+                <option>Sugar</option>
+                <option>Splenda</option>
+                <option>Stevia</option>
+              </select>
+          </div>
+          </ion-item>
+          <div class="col-20 noPadding">
+            <label class="item item-input sipsterInputSmall">
+              <input type="number" placeholder="0" min="0" max="5" ng-model="updateInfo.sweetener.numOf">
+            </label>
+          </div>
+        </div>
+      </div>
+      </div>
+      <button ng-show="clickedTea" class="button button-block button-positive" type="submit">Update Preferences</button>
+      </div>
+
+      <!-- Hot Chocolate Fields -->
+      <div class="row noPadding" ng-show="clickedHc">
+        <div class="col-80 noPadding">
+          <ion-item class="item-input item-select sipsterInput">
+            <span class="input-label">Whitener</span>
+            <select ng-model="updateInfo.whitener.type">
+              <option selected>None</option>
+              <option>Cream</option>
+              <option>Milk</option>
+              <option>Half and Half</option>
+              <option>Dairy Substitute</option>
+            </select>
+
+        </div>
+        </ion-item>
+
+        <div class="col-20 noPadding">
+          <label class="item item-input sipsterInputSmall">
+            <input type="number" placeholder="0" ng-model="updateInfo.whitener.numOf">
+          </label>
+        </div>
+      </div>
+      <button ng-show="clickedHc" class="button button-block button-positive" type="submit">Update Preferences</button>
+      </div>
+
+      <!-- Cold Fields -->
+      <div ng-show="clickedCold">
+        <label class="item item-input sipsterInput">
+          <input type="text" placeholder="Tell us your favourite" ng-model="updateInfo.blend">
+        </label>
+
+        <button ng-show="clickedCold" class="button button-block button-positive" type="submit">Update Preferences</button>
+      </div>
+      </div>
+
+    </form>
+
+  </ion-content>
+</ion-modal-view>

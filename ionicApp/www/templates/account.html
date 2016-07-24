@@ -1,0 +1,21 @@
+<ion-view view-title="Account">
+<ion-nav-buttons side="right">
+      <button class="button ion-close-round" ng-click="goHome()">
+      </button>
+ </ion-nav-buttons>
+<ion-content class="padding scroll-bg" ng-controller="AccountCtrl">
+
+  <button class="button button-block button-dark" ng-click="openModal(1)">CHANGE USER INFO</button>
+  <button class="button button-block button-assertive" ng-click="openModal(3)">RESET PASSWORD</button>
+  <button class="button button-block button-calm" ng-click="openModal(2)">UPDATE DRINK PREFERENCES</button><br>
+
+
+<!-- logout form -->
+
+    <form ng-submit="logout()">
+     <button class="button button-block button-positive" type="submit">LOGOUT</button>
+   </form>
+
+
+  </ion-content>
+</ion-view>

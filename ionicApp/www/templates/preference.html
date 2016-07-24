@@ -1,0 +1,196 @@
+
+<ion-view view-title="Tell Us Your Favourite">
+<ion-content class="padding scroll-bg">
+ 
+    <form ng-submit="doPreference()" id="newPref">
+        <ion-scroll zooming="true" direction="xy" style="width: 500px; height: 160px">
+            <div class="row" style="width: 5000px; height: 150px;">
+                
+            <div ng-click="coffeeSelect()" class="col-20 coffee" ng-class="{'coffeeSelect':clickedCoffee,'coffee':!clickedCoffee}" ng-model="newPref.defaultDrink.beverage">
+            </div>
+           
+           <div ng-click="teaSelect()" class="col-20 tea" ng-class="{'teaSelect':clickedTea,'tea':!clickedTea}">
+            </div>
+
+            <div ng-click="hcSelect()" class="col-20 hc" ng-class="{'hcSelect':clickedHc,'hc':!clickedHc}">
+            </div>
+            
+            <div ng-click="coldSelect()" class="col-20 cold" ng-class="{'coldSelect':clickedCold,'cold':!clickedCold}">
+            </div>    
+                
+            </div>
+        </ion-scroll>
+
+            
+    <!-- Coffee Fields -->
+        <div ng-show="clickedCoffee">
+
+        <ion-item class="item-input item-select sipsterInput">
+            <span class="input-label">Size</span>  
+            <select ng-model="newPref.defaultDrink.size">
+                <option selected>Extra Large</option>
+                <option>Large</option>
+                <option>Medium</option>
+                <option>Small</option>
+            </select>
+        </ion-item>
+
+        <ion-item class="item-input item-select sipsterInput">
+            <span class="input-label">Roast</span>
+            <select ng-model="newPref.defaultDrink.blend">
+                <option selected>Dark</option>
+                <option>Medium</option>
+                <option>Light</option>
+            </select>
+        </ion-item>
+
+    <div class="row noPadding">
+        <div class="col-80 noPadding">
+            <ion-item class="item-input item-select sipsterInput">
+            <span class="input-label">Whitener</span>
+            <select ng-model="defaultDrink.additives.whitener.type">
+              <option selected>None</option>
+              <option>Cream</option>
+              <option>Milk</option>
+              <option>Half and Half</option>
+              <option>Dairy Substitute</option>
+            </select>
+
+        </div>
+            </ion-item>
+        
+        <div class="col-20 noPadding">
+            <label class="item item-input sipsterInputSmall">
+                <input type="number" placeholder="0" ng-model="defaultDrink.additives.whitener.numberOf">
+            </label>
+        </div>
+    </div>
+    <div class="row noPadding">
+        <div class="col-80 noPadding">
+            <ion-item class="item-input item-select sipsterInput">
+                <span class="input-label" >Sweetener</span>
+                <select ng-model="defaultDrink.additives.sweetener.type">
+                    <option selected>None</option>
+                    <option>Sugar</option>
+                    <option>Splenda</option>
+                    <option>Stevia</option>
+                </select>
+        </div>
+            </ion-item>
+        <div class="col-20 noPadding">
+            <label class="item item-input sipsterInputSmall">
+                <input type="number" placeholder="0" ng-model="defaultDrink.additives.sweetener.numberOf">
+            </label>
+        </div>
+    </div>
+</div>
+</div>
+<button ng-show="clickedCoffee" class="button button-block button-positive" type="submit">NEXT</button>
+</div>
+
+    <!-- Tea Fields -->
+        <div ng-show="clickedTea">
+
+        <ion-item class="item-input item-select sipsterInput">
+            <span class="input-label">Size</span>  
+            <select ng-model="newPref.defaultDrink.size">
+                <option selected>Extra Large</option>
+                <option>Large</option>
+                <option>Medium</option>
+                <option>Small</option>
+            </select>
+        </ion-item>
+
+        <ion-item class="item-input item-select sipsterInput">
+            <span class="input-label">Blend</span>
+            <select ng-model="newPref.defaultDrink.blend">
+                <option selected>Green</option>
+                <option>Chai</option>
+                <option>English Breakfast</option>
+                <option>Orange Pekoe</option>
+                <option>Earl Grey</option>
+            </select>
+        </ion-item>
+
+    <div class="row noPadding">
+        <div class="col-80 noPadding">
+            <ion-item class="item-input item-select sipsterInput">
+            <span class="input-label">Whitener</span>
+            <select ng-model="defaultDrink.additives.whitener.type">
+              <option selected>None</option>
+              <option>Cream</option>
+              <option>Milk</option>
+              <option>Half and Half</option>
+              <option>Dairy Substitute</option>
+            </select>
+
+        </div>
+            </ion-item>
+        
+        <div class="col-20 noPadding">
+            <label class="item item-input sipsterInputSmall">
+                <input type="number" placeholder="0" ng-model="defaultDrink.additives.whitener.numberOf">
+            </label>
+        </div>
+    </div>
+    <div class="row noPadding">
+        <div class="col-80 noPadding">
+            <ion-item class="item-input item-select sipsterInput">
+                <span class="input-label" >Sweetener</span>
+                <select ng-model="defaultDrink.additives.sweetener.type">
+                    <option selected>None</option>
+                    <option>Sugar</option>
+                    <option>Splenda</option>
+                    <option>Stevia</option>
+                </select>
+        </div>
+            </ion-item>
+        <div class="col-20 noPadding">
+            <label class="item item-input sipsterInputSmall">
+                <input type="number" placeholder="0" ng-model="defaultDrink.additives.sweetener.numberOf">
+            </label>
+        </div>
+    </div>
+</div>
+<button ng-show="clickedTea" class="button button-block button-positive" type="submit">NEXT</button>
+
+</div>
+</div>
+
+<!-- Hot Chocolate Fields -->
+<div class="row noPadding" ng-show="clickedHc">
+        <div class="col-80 noPadding">
+            <ion-item class="item-input item-select sipsterInput">
+            <span class="input-label">Whitener</span>
+            <select ng-model="defaultDrink.additives.whitener.type">
+                <option selected>None</option>
+                <option>Cream</option>
+                <option>Milk</option>
+                <option>Half and Half</option>
+                <option>Dairy Substitute</option>
+            </select>
+
+        </div>
+            </ion-item>
+        
+        <div class="col-20 noPadding">
+            <label class="item item-input sipsterInputSmall">
+                <input type="number" placeholder="0" ng-model="defaultDrink.additives.whitener.numberOf">
+            </label>
+        </div>
+    </div>
+    <button ng-show="clickedHc" class="button button-block button-positive" type="submit">NEXT</button>
+</div>
+
+<!-- Cold Fields -->
+<div ng-show="clickedCold">
+    <label class="item item-input sipsterInput">
+        <input type="text" placeholder="Tell us your favourite" ng-model="newPref.defaultDrink.blend">
+    </label>
+        
+       <button ng-show="clickedCold" class="button button-block button-positive" type="submit">NEXT</button>
+</div>
+
+    </form>
+  </ion-content>
+</ion-view>

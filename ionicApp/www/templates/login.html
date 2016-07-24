@@ -1,0 +1,27 @@
+<ion-view hide-nav-bar="true">
+
+  <ion-content class="padding scroll-bg">
+    <br>
+    <br>
+    <center><img src="img/sipsterLogo.png" width="300px"></center>
+    <br>
+    <form ng-submit="doLogin()">
+
+      <label class="item item-input sipsterInput">
+        <i class="icon ion-email balanced placeholder-icon larger"></i>
+        <input type="email" placeholder="Email" ng-model="loginData.email">
+      </label>
+
+      <label class="item item-input sipsterInput">
+        <i class="icon ion-locked balanced placeholder-icon medium"></i>
+        <input type="password" placeholder="Password" ng-model="loginData.password">
+      </label>
+      <div>
+        <button class="button button-block button-positive" type="submit">LOGIN</button>
+
+        <center><label ng-click="go('signup')"><u>Become a Sipster</u></label></center>
+      </div>
+    </form>
+  </ion-content>
+
+</ion-view>

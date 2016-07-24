@@ -1,0 +1,67 @@
+<ion-view view-title="Share Sipster">
+<ion-nav-buttons side="right">
+      <button class="button icon ion-gear-a" ng-click="goAccount()">
+      </button>
+ </ion-nav-buttons>
+      <ion-content class="padding scroll-bg">
+      
+
+<div class="row">
+  <div class="col share">
+      <a href="https://www.facebook.com/Sipster-App-1758148024417250/"><i class="ion-social-facebook facebookShareIcon"></i></a>
+  </div>
+
+  <div class="col share">
+    <a href="https://twitter.com/Sipster_App"><i class="ion-social-twitter twitterShareIcon"></i></a>
+  </div>
+</div>
+
+</ion-content>
+ 
+</ion-view> 
+
+<!-- CODE FOR FUTURE IMPLEMENTATION
+<! <ion-view view-title="Friends">
+<ion-nav-buttons side="right">
+      <button class="button icon ion-gear-a" ng-click="goAccount()">
+      </button>
+ </ion-nav-buttons>
+      <ion-content class="padding scroll-bg">
+        <div>
+          <div class="item item-royal noBorder">
+            Add your Friends
+          </div>
+          <div class="item item-input-inset noBorder">
+            <label class="item-input-wrapper">
+              <i class="icon ion-ios-search placeholder-icon"></i>
+              <input type="text" placeholder="Search" ng-model="search">
+            </label>
+          </div>
+      <div>
+      <form id="newRun">
+          <ul class="list">
+            <li class="item item-checkbox" ng-repeat='user in users | filter: search'>
+
+              <label class="checkbox">
+              <input type="checkbox" ng-model="user.checked">
+              </label>
+
+              {{user.local.display_name}}
+        <p>{{user.local.email}}
+
+            </li>
+          </ul>
+      </div>
+        </div>
+</ion-content>
+
+   <!align button to the bottom of the page -->
+    <!-- <div style="position: absolute; bottom: 4.5em; width: 100%">
+        <div style="text-align: center">
+          <button ng-click="doFriend()" class="button button-large button-positive" type="button">ADD FRIENDS</button>
+        </div>
+  </form>
+  </div>
+ 
+</ion-view> --> 
+

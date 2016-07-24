@@ -1,0 +1,21 @@
+<ion-modal-view>
+  <ion-header-bar class="balanced">
+    <h1 class="title">Active Run</h1>
+    <div class="buttons">
+      <button class="button ion-close-round" ng-click="closeModal()">
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding scroll-bg" ng-controller="AccountCtrl">
+    <form ng-submit="updateUserInfo()">
+      <input class="item item-input sipsterInput" placeholder="Change your Email" style="width: 90%; margin-left: auto; margin-right: auto;" ng-model="updateInfo.email" />
+      <input class="item item-input sipsterInput" placeholder="Change your Phone Number" style="width: 90%; margin-left: auto; margin-right: auto;" ng-model="updateInfo.phone" />
+      <input class="item item-input sipsterInput" placeholder="Change your Display Name" style="width: 90%; margin-left: auto; margin-right: auto;" ng-model="updateInfo.display_name" />
+
+      <div class="buttons">
+       <button class="button button-block button-positive" type="submit">UPDATE USER INFO</button>
+      </div>
+    </form>
+
+  </ion-content>
+</ion-modal-view>

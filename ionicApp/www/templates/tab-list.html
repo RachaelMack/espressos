@@ -1,0 +1,36 @@
+<ion-view view-title="Runs">
+<ion-nav-buttons side="right">
+      <button class="button icon ion-gear-a" ng-click="goAccount()">
+      </button>
+ </ion-nav-buttons>
+      <ion-content class="padding scroll-bg">
+<div class="item item-input-inset noBorder">
+      <label class="item-input-wrapper">
+              <i class="icon ion-ios-search placeholder-icon"></i>
+              <input type="text" placeholder="Search" ng-model="search">
+        </label>
+  </div>
+  <div class="list card" ng-repeat="run in coffeeRun | filter: search">
+
+  <div class="item item-avatar">
+    <img src="img/cup_icon.png">
+    <h2 class="favTitle">{{run.title}}</h2>
+  </div>
+
+  <div class="item item-list" ng-repeat="pref in run.prefs">
+    <ul>
+      <li>{{pref.display_name}}: {{pref.preferences.defaultDrink.size}} {{pref.preferences.defaultDrink.beverage}} ({{pref.preferences.defaultDrink.blend}})
+      <p>{{pref.preferences.defaultDrink.additives.whitener.numberOf}} {{pref.preferences.defaultDrink.additives.whitener.type}},
+        {{pref.preferences.defaultDrink.additives.sweetener.numberOf}} {{pref.preferences.defaultDrink.additives.sweetener.type}}
+      </li>
+    </ul>
+  </div>
+<!-- 
+  <a class="item item-icon-left dark footerBackground" href="#/tab/location">
+    <i class="ion-ios-location"></i>
+    Find a Coffee Shop
+  </a> -->
+
+</div>
+</ion-content>
+</ion-view>

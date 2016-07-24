@@ -1,0 +1,42 @@
+<ion-view view-title="Create Your Run">
+<ion-nav-buttons side="right">
+      <button class="button ion-close-round" ng-click="goHome()">
+      </button>
+ </ion-nav-buttons>
+      <ion-content class="padding scroll-bg">
+        <div>
+          <div class="item item-input-inset noBorder">
+            <label class="item-input-wrapper">
+              <i class="icon ion-ios-search placeholder-icon"></i>
+              <input type="text" placeholder="Search" ng-model="search">
+            </label>
+          </div>
+    	<div>
+    	<form id="newRun">
+          <ul class="list">
+            <li class="item item-checkbox topBorder" ng-repeat='user in users | filter: search'>
+
+              <label class="checkbox">
+              <input type="checkbox" ng-model="user.checked">
+              </label>
+
+              {{user.local.display_name}}
+			  <p>Beverage: {{user.local.preferences.defaultDrink.beverage}} ({{user.local.preferences.defaultDrink.blend}})
+			  <p>Size: {{user.local.preferences.defaultDrink.size}}
+			  <p>{{user.local.preferences.defaultDrink.additives.whitener.numberOf}} {{user.local.preferences.defaultDrink.additives.whitener.type}}
+			  <p>{{user.local.preferences.defaultDrink.additives.sweetener.numberOf}} {{user.local.preferences.defaultDrink.additives.sweetener.type}}
+
+            </li>
+          </ul>
+      </div>
+        </div>
+
+
+</ion-content>
+
+<ion-footer-bar class="footer-bar-custom">
+    <a class="footer-bar-item item-center button button button-positive" ng-click="doRun()">SUBMIT</a>
+</ion-footer-bar>    
+ 	</form>
+ 
+</ion-view>

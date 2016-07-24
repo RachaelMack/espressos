@@ -1,0 +1,34 @@
+<ion-view view-title="Sipster">
+<ion-nav-buttons side="right">
+      <button class="button icon ion-gear-a royal" ng-click="goAccount()">
+      </button>
+</ion-nav-buttons>
+  <ion-content class="scroll-bg" data-ng-init="init()">
+  <center>   
+<div class="row">
+  <div class="col">
+    <img id="quote" class="dashQuote" src="img/quote3.svg">
+  </div>
+</div>
+
+ 
+  <div class="row" ng-show="showCurrentRun">
+    <div class="col">
+      <img class="dashButton" ng-click="currentRun()" src="img/run_icon_saved.svg">
+    </div>
+  </div> 
+  <div class="row" ng-show="showCurrentRun">
+    <div class="col">
+      <p class="link" ng-click="displayNewRun()">Start a New Run</p>
+    </div>
+  </div>
+
+  <div class="row" ng-show="showNewRun">
+    <div class="col">
+      <img class="dashButton" ng-click="displayNewRun()" src="img/run_icon.svg">
+    </div>
+  </div> 
+  </center>   
+
+  </ion-content>
+</ion-view>

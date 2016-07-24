@@ -1,0 +1,8 @@
+{
+  "name": "Sipster",
+  "app_id": "b8622ef0",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ]
+}
