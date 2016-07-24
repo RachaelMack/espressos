@@ -1,7 +1,8 @@
-# MVP
-MVP Repo for EspresSOS
+# EspresSOS
+MVP Repo for EspresSOSApp.com
 
---Coming Soon--
+###Master:
+The Master Branch is to be kept pristine; code that has not yet been approved for release will be managed in branches.
 
 ###Dev Environment:
   MEAN Stack <br>
