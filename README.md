@@ -1,10 +1,5 @@
-# MVP
-MVP Repo for SipsterApp.com 
-
-Welcome Sipsters Creators.
-Thank you for bringing your time and talents to this project.
-
-Please read below for a few things you will need to know about the project to make your experience on Team Sipster an amazingly fun and productive time.
+# EspresSOS
+MVP Repo for EspresSOSApp.com 
 
 ###Master:
 The Master Branch is to be kept pristine; code that has not yet been approved for release will be managed in branches.  Before writing any code to the github, please check with your team lead or DevOps to ensure you are pushing to the correct   location.
