@@ -77,8 +77,7 @@ angular.module('starter.controllers',['ngStorage', 'ngResource'])
   };
 
   $scope.doSignup = function(){
-
-    $http.post("http://159.203.21.32:8080/api/signup", {newPref: $scope.newPref, display_name: $scope.loginData.display_name, email: $scope.loginData.email, phone: $scope.loginData.phone, password: $scope.loginData.password}).then(function(result){
+    $http.post("http://159.203.61.13:8080/api/signup", {newPref: $scope.newPref, display_name: $scope.loginData.display_name, email: $scope.loginData.email, phone: $scope.loginData.phone, password: $scope.loginData.password}).then(function(result){
       if(result.data.status == "success"){
         console.log("here's the pref:", $scope.newPref);
         $localStorage.user_id = result.data.userid;
@@ -109,7 +108,7 @@ angular.module('starter.controllers',['ngStorage', 'ngResource'])
 
   $scope.doLogin = function () {
     console.log("LOGIN user: " + $scope.loginData.email + " - PW: " + $scope.loginData.password);
-    $http.post("http://159.203.21.32:8080/api/login", {email: $scope.loginData.email, password: $scope.loginData.password}).then(function(result){
+    $http.post("http://159.203.61.13:8080/api/login", {email: $scope.loginData.email, password: $scope.loginData.password}).then(function(result){
       if (result.data.status == "success"){
         $localStorage.user_id = result.data.userid;
         $localStorage.token = result.data.token;
@@ -380,7 +379,7 @@ angular.module('starter.controllers',['ngStorage', 'ngResource'])
     $state.go(location);
   };
 
-  $http.get("http://159.203.21.32:8080/api/userPreferences").then(function(result) {
+  $http.get("http://159.203.61.13:8080/api/userPreferences").then(function(result) {
     $scope.users = result.data;
     $scope.users.sort();
     console.log(result.data);
@@ -454,7 +453,7 @@ angular.module('starter.controllers',['ngStorage', 'ngResource'])
 };
 
 
-  $http.get("http://159.203.21.32:8080/api/getCoffeeRun?creator="+$localStorage.user_id).then(function(result) {
+  $http.get("http://159.203.61.13:8080/api/getCoffeeRun?creator="+$localStorage.user_id).then(function(result) {
     $scope.coffeeRun = result.data;
     $scope.coffeeRun.reverse();
     console.log(result.data);
@@ -480,7 +479,7 @@ angular.module('starter.controllers',['ngStorage', 'ngResource'])
     $localStorage.cachedRun.title = $scope.newRun.title;
     $scope.userId = $localStorage.user_id;
 
-    $http.post("http://159.203.21.32:8080/api/saveCoffeeRun", {newRun: $localStorage.cachedRun, creator: $scope.userId }).then(function(result){
+    $http.post("http://159.203.61.13:8080/api/saveCoffeeRun", {newRun: $localStorage.cachedRun, creator: $scope.userId }).then(function(result){
      console.log("These are your results:", result);
 
      if(result.statusText == "OK"){
@@ -639,7 +638,7 @@ angular.module('starter.controllers',['ngStorage', 'ngResource'])
     console.log("This is the userId:", {userId: $localStorage.user_id});
 
 
-    $http.put("http://159.203.21.32:8080/api/userInformation/"+$localStorage.user_id, $scope.updateInfo).then(function(result) {
+    $http.put("http://159.203.61.13:8080/api/userInformation/"+$localStorage.user_id, $scope.updateInfo).then(function(result) {
       $scope.userData = result.data.local;
     }, function(error) {
       alert("There was a problem with something.");
@@ -658,7 +657,7 @@ angular.module('starter.controllers',['ngStorage', 'ngResource'])
       $scope.updateInfo.whitener.numOf = 0;
       if($scope.updateInfo.sweetener.numOf == undefined){
         $scope.updateInfo.sweetener.numOf = 0;
-        $http.put("http://159.203.21.32:8080/api/userPreferences/"+$localStorage.user_id, $scope.updateInfo).then(function(result) {
+        $http.put("http://159.203.61.13:8080/api/userPreferences/"+$localStorage.user_id, $scope.updateInfo).then(function(result) {
           $scope.userData = result.data.local;
           console.log("After:", $scope.updateInfo, "and this:", $scope.userData);
         }, function(error) {
@@ -669,7 +668,7 @@ angular.module('starter.controllers',['ngStorage', 'ngResource'])
         });
       }
       else{
-        $http.put("http://159.203.21.32:8080/api/userPreferences/"+$localStorage.user_id, $scope.updateInfo).then(function(result) {
+        $http.put("http://159.203.61.13:8080/api/userPreferences/"+$localStorage.user_id, $scope.updateInfo).then(function(result) {
           $scope.userData = result.data.local;
           console.log("After:", $scope.updateInfo, "and this:", $scope.userData);
         }, function(error) {
@@ -684,7 +683,7 @@ angular.module('starter.controllers',['ngStorage', 'ngResource'])
     else{
       if($scope.updateInfo.sweetener.numOf == undefined){
         $scope.updateInfo.sweetener.numOf = 0;
-        $http.put("http://159.203.21.32:8080/api/userPreferences/"+$localStorage.user_id, $scope.updateInfo).then(function(result) {
+        $http.put("http://159.203.61.13:8080/api/userPreferences/"+$localStorage.user_id, $scope.updateInfo).then(function(result) {
           $scope.userData = result.data.local;
           console.log("After:", $scope.updateInfo, "and this:", $scope.userData);
         }, function(error) {
@@ -695,7 +694,7 @@ angular.module('starter.controllers',['ngStorage', 'ngResource'])
         });
       }
       else{
-        $http.put("http://159.203.21.32:8080/api/userPreferences/"+$localStorage.user_id, $scope.updateInfo).then(function(result) {
+        $http.put("http://159.203.61.13:8080/api/userPreferences/"+$localStorage.user_id, $scope.updateInfo).then(function(result) {
           $scope.userData = result.data.local;
           console.log("After:", $scope.updateInfo, "and this:", $scope.userData);
         }, function(error) {
@@ -711,7 +710,7 @@ angular.module('starter.controllers',['ngStorage', 'ngResource'])
   };
 
   $scope.resetPassword = function(){
-    $http.post("http://159.203.21.32:8080/forgotPassword", $scope.reset).success(function(res){
+    $http.post("http://159.203.61.13:8080/forgotPassword", $scope.reset).success(function(res){
       $ionicPopup.alert({
         title: 'Password reset was successful!',
         template: 'Please check your email for a reset link.'
